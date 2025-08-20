@@ -1,0 +1,49 @@
+.container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  /* border: 2px solid black; */
+}
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  max-width: auto;
+  height: auto;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.links {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+.list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.listItem {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 18px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.listItem:hover {
+  color: #0070f3;
+  transform: scale(1.15);
+  transition: transform 0.3s ease;
+}

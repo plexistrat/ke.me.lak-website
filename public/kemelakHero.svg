@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-labelledby="title desc">
+  <title id="title">ΚΕ.ΜΕ.ΛΑΚ — Hero Page Logo</title>
+  <desc id="desc">Έντονη έκδοση λογότυπου ΚΕ.ΜΕ.ΛΑΚ για χρήση σε hero section.</desc>
+
+  <style>
+    .stroke { stroke:#000; fill:none; stroke-width:8; stroke-linecap:round; stroke-linejoin:round; }
+    .textRing { font: 900 32px "Georgia", "Times New Roman", serif; fill:#000; letter-spacing: 3px; }
+    .titleMain { font: 900 64px "Georgia", "Times New Roman", serif; fill:#000; letter-spacing: 4px; }
+  </style>
+
+  <defs>
+    <path id="arcPath" d="M200,450 A280,280 0 1,1 700,450"></path>
+  </defs>
+
+  <g transform="translate(450,280)">
+    <path d="M-180,-100 L0,-200 L180,-100" class="stroke"></path>
+    <rect x="-180" y="-100" width="360" height="200" class="stroke"></rect>
+    <rect x="-30" y="20" width="60" height="80" class="stroke"></rect>
+    <rect x="-150" y="-60" width="60" height="40" class="stroke"></rect>
+    <rect x="90" y="-60" width="60" height="40" class="stroke"></rect>
+    <rect x="-150" y="0" width="60" height="40" class="stroke"></rect>
+    <rect x="90" y="0" width="60" height="40" class="stroke"></rect>
+  </g>
+
+  <text class="titleMain" x="450" y="470" text-anchor="middle">ΚΕ.ΜΕ.ΛΑΚ</text>
+
+  <text class="textRing">
+    <textPath href="#arcPath" startOffset="50%" text-anchor="middle">
+      ΚΕΝΤΡΟ ΜΕΛΕΤΗΣ ΛΑΟΓΡΑΦΙΑΣ ΚΑΛΛΙΘΕΑΣ
+    </textPath>
+  </text>
+</svg>
