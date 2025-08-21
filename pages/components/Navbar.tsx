@@ -1,40 +1,105 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "@/styles/Navbar.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const navItems = [
+    { href: "/", label: "Αρχική" },
+    { href: "/about", label: "Σχετικά με εμας" },
+    { href: "/blog/blogIndex", label: "Ιστορίες" },
+    { href: "/activities", label: "Δράσεις" },
+  ];
+
   return (
-    <div className={styles.container}>
+    <nav className={styles.container}>
       <div className={styles.logoContainer}>
-        <Link href="/">
+        <Link href="/" aria-label="Αρχική σελίδα">
           <Image
             className={styles.logo}
             src="/kemelakHero.svg"
-            alt="Kemelak Logo"
+            alt="Kemelak Logo - Κέντρο Μελέτης Λαογραφίας Καλλιθέας"
             width={200}
             height={100}
+            priority
           />
         </Link>
       </div>
 
-      <div className={styles.links}>
+      {/* Desktop Navigation */}
+      <div className={styles.desktopLinks}>
         <ul className={styles.list}>
-          <Link style={{ textDecoration: "none" }} href="/">
-            <li className={styles.listItem}>Αρχική</li>
-          </Link>
-          <Link style={{ textDecoration: "none" }} href="/about">
-            <li className={styles.listItem}>Σχετικά με εμας</li>
-          </Link>
-          <Link style={{ textDecoration: "none" }} href="../blog/blogIndex">
-            <li className={styles.listItem}>Ιστορίες</li>
-          </Link>
-          <Link style={{ textDecoration: "none" }} href="/activities">
-            <li className={styles.listItem}>Δράσεις</li>
-          </Link>
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className={`${styles.listItem} ${
+                  router.pathname === item.href ? styles.active : ""
+                }`}
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
-    </div>
+
+      {/* Mobile Menu Button */}
+      <button
+        className={styles.mobileMenuButton}
+        onClick={toggleMenu}
+        aria-label="Toggle navigation menu"
+        aria-expanded={isMenuOpen}
+      >
+        <span
+          className={`${styles.hamburger} ${isMenuOpen ? styles.open : ""}`}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+      {/* Mobile Navigation */}
+      <div
+        className={`${styles.mobileLinks} ${
+          isMenuOpen ? styles.mobileLinksOpen : ""
+        }`}
+      >
+        <ul className={styles.mobileList}>
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className={`${styles.mobileListItem} ${
+                  router.pathname === item.href ? styles.active : ""
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Mobile Overlay */}
+      {isMenuOpen && (
+        <div
+          className={styles.overlay}
+          onClick={() => setIsMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+    </nav>
   );
 }
 
