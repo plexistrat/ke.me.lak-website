@@ -26,14 +26,11 @@ function Navbar() {
           <Link style={{ textDecoration: "none" }} href="/about">
             <li className={styles.listItem}>Σχετικά με εμας</li>
           </Link>
-          <Link style={{ textDecoration: "none" }} href="/blog">
+          <Link style={{ textDecoration: "none" }} href="../blog/blogIndex">
             <li className={styles.listItem}>Ιστορίες</li>
           </Link>
           <Link style={{ textDecoration: "none" }} href="/activities">
-            <li className={styles.listItem}>Δραστηριοτήτες</li>
-          </Link>
-          <Link style={{ textDecoration: "none" }} href="/contact">
-            <li className={styles.listItem}>Επικοινωνία</li>
+            <li className={styles.listItem}>Δράσεις</li>
           </Link>
         </ul>
       </div>

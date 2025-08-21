@@ -1,16 +1,20 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import articles from "../data/data.json";
-
+import articles from "../../data/data.json";
+import Link from "next/link";
+import styles from "../../styles/id.module.css";
 export default function ArticlePage({ article }: { article: any }) {
   if (!article) return <p>Άρθρο δεν βρέθηκε</p>;
 
   return (
-    <main style={{ maxWidth: "800px", margin: "0 auto", padding: "2rem" }}>
-      <h1>{article.title}</h1>
-      <p>
-        <em>{article.date}</em>
-      </p>
-      <p>{article.content}</p>
+    <main className={styles.container}>
+      <div className={styles.contentWrapper}>
+        <h1 className={styles.title}>{article.title}</h1>
+        <p className={styles.date}>{article.date}</p>
+        <p className={styles.content}>{article.content}</p>
+        <Link href="/blog/blogIndex">
+          <button className={styles.button}>Πισω στις ιστοριες</button>
+        </Link>
+      </div>
     </main>
   );
 }

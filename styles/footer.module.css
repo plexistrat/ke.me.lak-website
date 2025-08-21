@@ -1,42 +1,44 @@
 .footer {
   width: 100%;
+  height: fit-content;
   background: #000000;
   color: #fff;
-  padding: 40px 60px 20px;
+  padding: 20px 0;
 }
 
 .topSection {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
-  gap: 40px;
-  margin-bottom: 30px;
 }
-
-.logoSection {
-  margin-left: 40px;
-  max-width: 300px;
+.leftContent {
+  /* border: 2px solid green; */
+  width: 800px;
+  display: flex;
+  align-items: center;
 }
-
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: auto;
+  margin-left: 20px;
+}
 .logo {
-  /* max-width: 150px; */
-  /* height: auto; */
-  /* margin-bottom: 10px; */
+  width: 120px;
+  height: 100px;
+  margin-right: 20px;
 }
-
 .slogan {
   font-size: 14px;
   color: #aaa;
-  margin: 10px 0;
 }
 
 .socials {
+  /* border: 2px solid red; */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 675px;
   gap: 50px;
-  margin-top: 15px;
+  margin-right: 20px;
 }
 
 .socials a svg {
@@ -46,8 +48,11 @@
   transition: fill 0.3s ease;
 }
 
-.socials a:hover svg {
+.facebook:hover svg {
   fill: #0070f3;
+}
+.youtube:hover svg {
+  fill: #f30000;
 }
 
 .contact p {

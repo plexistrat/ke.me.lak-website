@@ -27,8 +27,6 @@ export default function Home() {
         Ανακαλύψτε τις ιστορίες πίσω από τα αντικείμενα
       </p>
 
-      {/* <PhotoGalery /> */}
-
       <Footer />
     </div>
   );

@@ -5,18 +5,21 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.topSection}>
-        <div className={styles.logoSection}>
-          <Image
-            className={styles.logo}
-            src="/kemelakWhite.svg"
-            alt="Kemelak White Logo"
-            width="150"
-            height="100"
-            color="#fff"
-          />
-          <p className={styles.slogan}>Κέντρο Μελέτης Λαογραφίας Καλλιθέας</p>
+        <div className={styles.leftContent}>
+          <div className={styles.logoContainer}>
+            <Image
+              className={styles.logo}
+              src="/kemelakWhite.svg"
+              alt="Kemelak White Logo"
+              width="120"
+              height="100"
+              color="#fff"
+            />
+            <p className={styles.slogan}>Κέντρο Μελέτης Λαογραφίας Καλλιθέας</p>
+          </div>
           <div className={styles.socials}>
             <a
+              className={styles.facebook}
               href="https://www.facebook.com/share/15RA5cakL6/"
               target="_blank"
               rel="noreferrer"
@@ -30,25 +33,9 @@ function Footer() {
                 />
               </svg>
             </a>
-            {/* <a href="https://instagram.com" target="_blank" rel="noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                <path
-                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 
-                114.9s51.3 114.9 114.9 114.9S339 319.5 
-                339 255.9 287.7 141 224.1 141zm146.4-141H77.5C34.7 
-                0 0 34.7 0 77.5v293c0 42.8 34.7 77.5 
-                77.5 77.5h293c42.8 0 77.5-34.7 
-                77.5-77.5v-293C448 34.7 413.3 0 
-                370.5 0zm-22.5 62c12.1 0 22 9.9 
-                22 22s-9.9 22-22 22-22-9.9-22-22 
-                9.9-22 22-22zM224.1 338c-45.6 
-                0-82.7-37.1-82.7-82.7s37.1-82.7 
-                82.7-82.7 82.7 37.1 82.7 82.7-37.1 
-                82.7-82.7 82.7z"
-                />
-              </svg>
-            </a> */}
+
             <a
+              className={styles.youtube}
               href="https://www.youtube.com/@%CE%9A%CE%95.%CE%9C%CE%95.%CE%9B%CE%91%CE%9A"
               target="_blank"
               rel="noreferrer"
@@ -70,11 +57,14 @@ function Footer() {
             </a>
           </div>
         </div>
+
         <div className={styles.contact}>
           <h4>Επικοινωνία</h4>
-          <p>📍 Καλλιθέα, Πυλιας Μεσσηνιας, Ελλάδα</p>
+          <p>📍 Καλλιθέα, Πυλιας Μεσσηνιας, Ελλάδα, T.K 24001</p>
           <p>📧 bzompolas@gmail.com</p>
+          <p>📧 kemelak.org@yahoo.com</p>
           <p>☎️ +30 6936596616</p>
+          <p>☎️ +30 27230 61135</p>
         </div>
       </div>
 
