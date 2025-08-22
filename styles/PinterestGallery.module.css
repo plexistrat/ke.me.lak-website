@@ -1,0 +1,367 @@
+/* PinterestGallery.module.css */
+
+.gallerySection {
+  width: 100%;
+  padding: 40px 0px;
+}
+
+.galleryTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 2.5rem 0;
+  color: #1a1a1a;
+  position: relative;
+}
+
+.galleryTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+.pinterestGrid {
+  display: grid;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.galleryColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.galleryCard {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background: #f8f9fa;
+  opacity: 0;
+  transform: translateY(20px);
+  margin-bottom: 16px;
+}
+
+.galleryCard.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.galleryCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.galleryImage {
+  transition: transform 0.5s ease;
+  border-radius: 16px;
+}
+
+.galleryCard:hover .galleryImage {
+  transform: scale(1.1);
+}
+
+.imageSkeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  border-radius: 16px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.galleryOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+  border-radius: 16px;
+}
+
+.galleryOverlay.visible {
+  opacity: 1;
+}
+
+.galleryActions {
+  display: flex;
+  gap: 12px;
+}
+
+.actionBtn {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+  color: #333;
+}
+
+.actionBtn:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+/* Lightbox styles */
+.lightboxOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+  outline: none;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.lightboxContent {
+  position: relative;
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightboxClose {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+.lightboxClose:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.lightboxNav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+.lightboxNav:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.lightboxPrev {
+  left: 30px;
+}
+
+.lightboxNext {
+  right: 30px;
+}
+
+.lightboxImageWrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.lightboxImage {
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.lightboxControls {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 12px 24px;
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+}
+
+.controlBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.controlBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.imageCounter {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .pinterestGrid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .pinterestGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .galleryCard {
+    margin-bottom: 12px;
+  }
+
+  .galleryTitle {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .lightboxNav {
+    width: 50px;
+    height: 50px;
+  }
+
+  .lightboxPrev {
+    left: 15px;
+  }
+
+  .lightboxNext {
+    right: 15px;
+  }
+
+  .lightboxClose {
+    top: 15px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .galleryCard:hover {
+    transform: translateY(-4px);
+  }
+
+  .galleryCard:hover .galleryImage {
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 480px) {
+  .pinterestGrid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .galleryCard {
+    margin-bottom: 10px;
+  }
+
+  .gallerySection {
+    padding: 20px 10px;
+  }
+
+  .galleryTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .lightboxNav {
+    display: none;
+  }
+
+  .lightboxControls {
+    bottom: 20px;
+    padding: 10px 20px;
+  }
+
+  .galleryCard:hover {
+    transform: translateY(-2px);
+  }
+
+  .galleryCard:hover .galleryImage {
+    transform: scale(1.02);
+  }
+}

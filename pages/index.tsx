@@ -3,6 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import BookCard from "./components/BookCard";
+import PinterestGallery from "./components/PinterestGallery";
+// import GaleryPhoto from "./components/GaleryPhoto";
+
+const galleryImages = Array.from({ length: 15 }, (_, index) => ({
+  id: `${index + 1}`,
+  src: `/${index + 1}.jpg`,
+  alt: `Gallery photo ${index + 1}`,
+}));
 
 export default function Home() {
   return (
@@ -52,7 +61,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
         {/* Quick Overview Section */}
         <section className={styles.overviewSection}>
           <div className={styles.overviewContainer}>
@@ -83,6 +91,27 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <div className={styles.booksSection}>
+          <h3>Οι εκδόσεις του ΚΕ.ΜΕ.ΛΑΚ</h3>
+          <div className={styles.booksGrid}>
+            <BookCard image="/EKTHESH.jpg" />
+            <BookCard image="/KAMINIA.jpg" />
+            <BookCard image="/LADI.jpg" />
+            <BookCard image="/LINARI.jpg" />
+            <BookCard image="/MEMERIZI.jpg" />
+            <BookCard image="/OMADA.jpg" />
+            <BookCard image="/SITARI.jpg" />
+            <BookCard image="/STAFIDA.jpg" />
+            <BookCard image="/TOYS.jpg" />
+          </div>
+        </div>
+
+        <PinterestGallery
+          images={galleryImages}
+          title="Gallery"
+          columns={4}
+          gap={16}
+        />
       </main>
 
       <Footer />

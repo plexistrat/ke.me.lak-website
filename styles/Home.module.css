@@ -222,6 +222,45 @@
   color: #666;
   margin: 0;
 }
+.booksSection {
+  background: linear-gradient(135deg, #f8f9fa 0%, #c0d1e16c 100%);
+  text-align: center;
+  padding: 100px 20px;
+}
+.booksSection h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.booksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+.galerySection {
+  background: linear-gradient(135deg, #f8f9fa 0%, #c0d1e16c 100%);
+  text-align: center;
+  /* padding: 100px 20px; */
+}
+.galerySection h3 {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "Arial", sans-serif;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.galeryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
 
 /* Animations */
 @keyframes fadeInUp {

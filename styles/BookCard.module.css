@@ -1,0 +1,523 @@
+/* Enhanced BookCard Styles - Matching Site Design */
+
+/* Card Styles */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f0f0f0;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border-color: #e0e0e0;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0070f3, #00a8ff, #0070f3);
+  background-size: 200% 100%;
+  animation: gradientShift 3s ease-in-out infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.card:hover .imageWrapper {
+  transform: scale(1.02);
+}
+
+.imageButton {
+  position: relative;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.imageButton:focus {
+  outline: 3px solid rgba(0, 112, 243, 0.5);
+  outline-offset: 2px;
+}
+
+.image {
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.imageButton:hover .image {
+  transform: scale(1.05);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 112, 243, 0.9) 0%,
+    rgba(0, 168, 255, 0.9) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: white;
+  font-weight: 600;
+}
+
+.imageButton:hover .imageOverlay {
+  opacity: 1;
+}
+
+.viewIcon {
+  font-size: 24px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.viewText {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Card Info */
+.cardInfo {
+  text-align: center;
+  width: 100%;
+}
+
+.cardTitle {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cardAuthor {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 4px;
+  font-style: italic;
+}
+
+.cardYear {
+  font-size: 12px;
+  color: #9ca3af;
+  background: #f8f9fa;
+  padding: 4px 8px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  opacity: 0;
+  animation: modalFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes modalFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.modalContent {
+  background: #ffffff;
+  border-radius: 24px;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: fit-content;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: scale(0.9);
+  animation: modalScaleIn 0.3s ease-out forwards;
+  position: relative;
+}
+
+@keyframes modalScaleIn {
+  to {
+    transform: scale(1);
+  }
+}
+
+.modalHeader {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+}
+
+.closeButton {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.closeButton:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+}
+
+.closeButton:focus {
+  outline: 2px solid #0070f3;
+  outline-offset: 2px;
+}
+
+.closeIcon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.modalBody {
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+  overflow: auto;
+  align-items: flex-start;
+}
+
+.modalImageWrapper {
+  flex-shrink: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modalImage {
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+}
+
+.modalInfo {
+  flex: 1;
+  min-width: 0;
+  padding-left: 20px;
+}
+
+.modalTitle {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.modalAuthor,
+.modalYear {
+  font-size: 16px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.authorLabel,
+.yearLabel {
+  font-weight: 600;
+  color: #0070f3;
+}
+
+.modalAuthor {
+  color: #555;
+}
+
+.modalYear {
+  color: #6c757d;
+}
+
+.modalDescription {
+  margin-top: 24px;
+}
+
+.descriptionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 8px;
+}
+
+.modalDescription p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.modalFooter {
+  padding: 20px 30px;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: center;
+}
+
+.actionButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #0070f3, #0056b3);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.actionButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 112, 243, 0.4);
+}
+
+.buttonIcon {
+  font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    padding: 16px;
+  }
+
+  .image {
+    width: 180px;
+    height: 260px;
+  }
+
+  .cardTitle {
+    font-size: 15px;
+  }
+
+  .cardAuthor {
+    font-size: 13px;
+  }
+
+  .modal {
+    padding: 15px;
+  }
+
+  .modalBody {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .modalInfo {
+    padding-left: 0;
+  }
+
+  .modalImage {
+    width: 280px;
+    height: 400px;
+  }
+
+  .modalTitle {
+    font-size: 24px;
+  }
+
+  .modalAuthor,
+  .modalYear {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 12px;
+  }
+
+  .image {
+    width: 160px;
+    height: 240px;
+  }
+
+  .cardTitle {
+    font-size: 14px;
+  }
+
+  .cardAuthor {
+    font-size: 12px;
+  }
+
+  .modal {
+    padding: 10px;
+  }
+
+  .modalBody {
+    padding: 15px;
+  }
+
+  .modalImage {
+    width: 240px;
+    height: 360px;
+  }
+
+  .modalTitle {
+    font-size: 20px;
+  }
+
+  .modalFooter {
+    padding: 15px 20px;
+  }
+
+  .actionButton {
+    font-size: 13px;
+    padding: 10px 20px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .imageWrapper,
+  .image,
+  .closeButton,
+  .actionButton {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .viewIcon {
+    animation: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .card {
+    background: #2d3748;
+    border-color: #4a5568;
+  }
+
+  .cardTitle {
+    color: #f7fafc;
+  }
+
+  .cardAuthor {
+    color: #cbd5e1;
+  }
+
+  .cardYear {
+    background: #4a5568;
+    color: #e2e8f0;
+  }
+
+  .modalContent {
+    background: #2d3748;
+    border-color: #4a5568;
+  }
+
+  .modalTitle {
+    color: #f7fafc;
+  }
+
+  .modalAuthor {
+    color: #cbd5e1;
+  }
+
+  .modalYear {
+    color: #a0aec0;
+  }
+
+  .descriptionTitle {
+    color: #f7fafc;
+    border-color: #4a5568;
+  }
+
+  .modalDescription p {
+    color: #cbd5e1;
+  }
+
+  .modalFooter {
+    border-color: #4a5568;
+  }
+}
