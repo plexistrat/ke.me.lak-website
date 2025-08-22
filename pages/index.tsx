@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import BookCard from "./components/BookCard";
 import PinterestGallery from "./components/PinterestGallery";
-// import GaleryPhoto from "./components/GaleryPhoto";
 
 const galleryImages = Array.from({ length: 15 }, (_, index) => ({
   id: `${index + 1}`,
