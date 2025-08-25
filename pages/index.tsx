@@ -36,7 +36,7 @@ export default function Home() {
           <div className={styles.heroContent}>
             <Image
               className={styles.logo}
-              src="/kemelakHero.svg"
+              src="/kemelakWhite.svg"
               alt="ΚΕ.ΜΕ.ΛΑΚ - Κέντρο Μελέτης Λαογραφίας Καλλιθέας"
               width={1000}
               height={300}

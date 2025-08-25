@@ -1,13 +1,13 @@
 .container {
   width: 100%;
-  height: fit-content;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: transparent;
+  /* background-color: transparent; */
   padding: 10px 0;
   position: relative;
-  z-index: 100;
+  /* z-index: 100; */
 }
 
 .logoContainer {
@@ -17,14 +17,15 @@
 }
 
 .logo {
-  max-width: 200px;
-  height: auto;
+  max-width: 150px;
+  /* height: auto; */
   margin-left: 20px;
-  transition: transform 0.3s ease;
+  margin-top: 20px;
+  transition: transform 0.5s ease;
 }
 
 .logo:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 /* Desktop Navigation */
