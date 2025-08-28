@@ -17,14 +17,14 @@ interface PinterestGalleryProps {
   gap?: number;
 }
 
-// const galleryImages = Array.from({ length: 15 }, (_, index) => ({
-//   id: `${index + 1}`,
-//   src: `/${index + 1}.jpg`,
-//   alt: `Gallery photo ${index + 1}`,
-// }));
+const galleryImages = Array.from({ length: 15 }, (_, index) => ({
+  id: `${index + 1}`,
+  src: `/${index + 1}.jpg`,
+  alt: `Gallery photo ${index + 1}`,
+}));
 
 const PinterestGallery: React.FC<PinterestGalleryProps> = ({
-  images,
+  images = galleryImages,
   title = "Gallery",
   columns = 4,
   gap = 16,
