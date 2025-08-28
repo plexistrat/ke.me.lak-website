@@ -63,7 +63,7 @@ function Footer() {
                 <span className={styles.icon} aria-label="Location">
                   📍
                 </span>
-                Καλλιθέα, Πυλιας Μεσσηνιας, Ελλάδα, T.K 24001
+                Καλλιθέα Πυλίας Μεσσηνίας, Ελλάδα, T.K 24001
               </p>
               <p className={styles.contactItem}>
                 <span className={styles.icon} aria-label="Email">
