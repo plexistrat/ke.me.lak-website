@@ -12,6 +12,7 @@
   margin: 0 0 2.5rem 0;
   color: #1a1a1a;
   position: relative;
+  padding-top: 40px;
 }
 
 .galleryTitle::after {
@@ -281,7 +282,8 @@
 /* Responsive design */
 @media (max-width: 1024px) {
   .pinterestGrid {
-    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    margin: 0 12px !important;
   }
 }
 
