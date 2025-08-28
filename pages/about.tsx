@@ -88,13 +88,13 @@ function About() {
               <h3 className={styles.ctaTitle}>Ανακαλύψτε περισσότερα</h3>
               <div className={styles.buttonGroup}>
                 <Link href="/blog/blogIndex" className={styles.primaryButton}>
-                  Διαβάστε τις ιστορίες μας
+                  Διαβαστε τις ιστοριες μας
                 </Link>
                 <Link href="/activities" className={styles.secondaryButton}>
-                  Δείτε τις δράσεις μας
+                  Δειτε τις δρασεις μας
                 </Link>
                 <Link href="/" className={styles.backButton}>
-                  Αρχική σελίδα
+                  Αρχικη σελιδα
                 </Link>
               </div>
             </div>
