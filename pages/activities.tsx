@@ -67,7 +67,7 @@ function Activities() {
               <div className={styles.statsSection}>
                 <div className={styles.stat}>
                   <span className={styles.statNumber}>{actions.length}</span>
-                  <span className={styles.statLabel}>Δραστηριότητες</span>
+                  <span className={styles.statLabel}>Δραστηριοτητες</span>
                 </div>
               </div>
 
