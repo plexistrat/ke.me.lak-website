@@ -125,7 +125,7 @@ export default function BlogIndex() {
                         )}
 
                         <div className={styles.readMore}>
-                          Διαβάστε περισσότερα →
+                          Διαβαστε περισσοτερα →
                         </div>
                       </div>
                     </Link>
