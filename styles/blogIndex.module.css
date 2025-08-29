@@ -86,10 +86,12 @@
 .searchWrapper {
   position: relative;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .searchInput {
-  width: 94%;
+  width: 90%;
   padding: 16px 50px 16px 20px;
   border: 2px solid #e9ecef;
   border-radius: 50px;
@@ -214,6 +216,7 @@
   line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -225,6 +228,7 @@
   margin-bottom: 15px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -497,6 +501,7 @@
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
