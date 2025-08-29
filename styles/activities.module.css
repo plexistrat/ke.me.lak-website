@@ -121,7 +121,7 @@
 
 /* Cards */
 .card {
-  background: #2d3748;
+  background: #ffffff;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
@@ -489,7 +489,7 @@
 }
 
 /* Dark mode support */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .container {
     background: #ffffff;
   }
@@ -527,4 +527,4 @@
   .emptyState p {
     color: #a0aec0;
   }
-}
+} */
