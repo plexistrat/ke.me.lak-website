@@ -51,7 +51,7 @@ export default function Home() {
             </p>
 
             <div className={styles.ctaButtons}>
-              <Link href="/about" className={styles.primaryButton}>
+              <Link href="/about " className={styles.primaryButton}>
                 Μαθετε περισσoτερα
               </Link>
               <Link href="/blog/blogIndex" className={styles.secondaryButton}>

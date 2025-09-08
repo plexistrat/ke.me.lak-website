@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "@/styles/BookCard.module.css";
 
@@ -12,6 +12,7 @@ interface BookCardProps {
 
 function BookCard({ image, title, author, description, year }: BookCardProps) {
   const [showBook, setShowBook] = useState(false);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   const handleClick = () => {
     setShowBook(!showBook);
@@ -28,10 +29,15 @@ function BookCard({ image, title, author, description, year }: BookCardProps) {
     if (e.key === "Escape") {
       setShowBook(false);
     }
+    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+      e.preventDefault();
+      setShowBook(false);
+    }
   };
 
   useEffect(() => {
     if (showBook) {
+      modalRef.current?.focus();
       document.addEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "hidden"; // Prevent background scrolling
     } else {
@@ -39,6 +45,10 @@ function BookCard({ image, title, author, description, year }: BookCardProps) {
       document.body.style.overflow = "unset";
     }
 
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "unset";
+    };
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "unset";
@@ -85,6 +95,8 @@ function BookCard({ image, title, author, description, year }: BookCardProps) {
           role="dialog"
           aria-modal="true"
           aria-labelledby="book-title"
+          ref={modalRef}
+          tabIndex={-1}
         >
           <div className={styles.modalContent}>
             <div className={styles.modalHeader}>
