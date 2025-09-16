@@ -139,6 +139,7 @@ const PinterestGallery: React.FC<PinterestGalleryProps> = ({
                     className={styles.galleryImage}
                     style={{ objectFit: "cover" }}
                     onLoad={() => handleImageLoad(image.id)}
+                    loading="lazy"
                   />
 
                   {!loadedImages.has(image.id) && (

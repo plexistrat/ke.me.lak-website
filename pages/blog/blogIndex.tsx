@@ -93,7 +93,7 @@ export default function BlogIndex() {
                 filteredArticles.map((article) => (
                   <article key={article.id} className={styles.articleCard}>
                     <Link
-                      href={`/blog/${article.id}`}
+                      href={`/blog/${article.slug}`}
                       className={styles.cardLink}
                     >
                       {article.image && (

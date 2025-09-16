@@ -1,11 +1,12 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import Head from "next/head";
+// import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import articles from "../../data/data.json";
 import styles from "../../styles/id.module.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 
 interface Article {
   id: number;
@@ -16,6 +17,7 @@ interface Article {
   readTime?: string;
   category?: string;
   image?: string;
+  slug?: string;
 }
 
 export default function ArticlePage({ article }: { article: Article | null }) {
@@ -64,27 +66,12 @@ export default function ArticlePage({ article }: { article: Article | null }) {
 
   return (
     <>
-      <Head>
-        <title>{article.title} | Ιστορίες από την Καλλιθέα</title>
-        <meta
-          name="description"
-          content={
-            (typeof article.content === "string"
-              ? article.content.substring(0, 160)
-              : article.excerpt || "Διαβάστε το άρθρο") + "..."
-          }
-        />
-        <meta property="og:title" content={article.title} />
-        <meta
-          property="og:description"
-          content={
-            (typeof article.content === "string"
-              ? article.content.substring(0, 160)
-              : article.excerpt || "Διαβάστε το άρθρο") + "..."
-          }
-        />
-        <meta property="og:type" content="article" />
-      </Head>
+      <SEO
+        title={`${article.title} | Ιστορίες από την Καλλιθέα`}
+        description={article.excerpt || article.content.substring(0, 160)}
+        image={article.image || "/heroPhoto.jpg"}
+        url={`https://kemelak.gr/blog/${article.slug}`}
+      />
 
       <div className={styles.container}>
         <Navbar />
@@ -189,7 +176,7 @@ export default function ArticlePage({ article }: { article: Article | null }) {
               <h2 className={styles.relatedTitle}>Περισσότερες Ιστορίες</h2>
               <div className={styles.relatedGrid}>
                 {articles
-                  .filter((a) => a.id !== article.id)
+                  .filter((a) => a.slug !== article.slug)
                   .slice(0, 3)
                   .map((relatedArticle) => (
                     <article
@@ -197,7 +184,7 @@ export default function ArticlePage({ article }: { article: Article | null }) {
                       className={styles.relatedCard}
                     >
                       <Link
-                        href={`/blog/${relatedArticle.id}`}
+                        href={`/blog/${relatedArticle.slug}`}
                         className={styles.relatedLink}
                       >
                         {relatedArticle.image && (
@@ -246,7 +233,7 @@ export default function ArticlePage({ article }: { article: Article | null }) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = articles.map((article) => ({
-    params: { id: article.id.toString() },
+    params: { slug: article.slug },
   }));
 
   return { paths, fallback: false };
@@ -254,7 +241,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
-    const article = articles.find((a) => a.id.toString() === params?.id);
+    const article = articles.find((a) => a.slug === params?.slug);
     return {
       props: { article: article || null },
       revalidate: 3600, // Revalidate every hour

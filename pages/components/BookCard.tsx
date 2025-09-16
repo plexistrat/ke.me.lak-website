@@ -8,9 +8,17 @@ interface BookCardProps {
   author?: string;
   description?: string;
   year?: string;
+  alt?: string;
 }
 
-function BookCard({ image, title, author, description, year }: BookCardProps) {
+function BookCard({
+  image,
+  title,
+  author,
+  description,
+  year,
+  alt,
+}: BookCardProps) {
   const [showBook, setShowBook] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -49,10 +57,6 @@ function BookCard({ image, title, author, description, year }: BookCardProps) {
       document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "unset";
     };
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "unset";
-    };
   }, [showBook]);
 
   return (
@@ -67,11 +71,11 @@ function BookCard({ image, title, author, description, year }: BookCardProps) {
             >
               <Image
                 src={image}
-                alt={title || "Book"}
+                alt={alt || title || "Book"}
                 width={220}
                 height={320}
                 className={styles.image}
-                priority
+                loading="lazy"
               />
               <div className={styles.imageOverlay}>
                 {/* <span className={styles.viewIcon}>👁️</span> */}
@@ -94,7 +98,7 @@ function BookCard({ image, title, author, description, year }: BookCardProps) {
           onClick={handleOverlayClick}
           role="dialog"
           aria-modal="true"
-          aria-labelledby="book-title"
+          aria-labelledby={title ? "book-title" : undefined}
           ref={modalRef}
           tabIndex={-1}
         >
@@ -113,11 +117,10 @@ function BookCard({ image, title, author, description, year }: BookCardProps) {
               <div className={styles.modalImageWrapper}>
                 <Image
                   src={image}
-                  alt={title || "Book"}
+                  alt={alt || title || "Book"}
                   width={400}
                   height={580}
                   className={styles.modalImage}
-                  priority
                 />
               </div>
 

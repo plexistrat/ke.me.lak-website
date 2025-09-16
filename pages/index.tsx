@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import BookCard from "./components/BookCard";
 import PinterestGallery from "./components/PinterestGallery";
-
+import SEO from "./components/SEO";
 const galleryImages = Array.from({ length: 15 }, (_, index) => ({
   id: `${index + 1}`,
   src: `/${index + 1}.jpg`,
@@ -15,6 +15,13 @@ const galleryImages = Array.from({ length: 15 }, (_, index) => ({
 export default function Home() {
   return (
     <div className={styles.container}>
+      <SEO
+        title="Λαογραφικό Μουσείο Καλλιθέας"
+        description="Επίσημη ιστοσελίδα του Λαογραφικού Μουσείου Καλλιθέας. Πληροφορίες, εκθέσεις και εκδηλώσεις."
+        image="https://kemelak.gr/museum-preview.jpg"
+        url="https://kemelak.gr"
+      />
+
       <Navbar />
 
       <main className={styles.main}>
@@ -51,7 +58,7 @@ export default function Home() {
             </p>
 
             <div className={styles.ctaButtons}>
-              <Link href="/about " className={styles.primaryButton}>
+              <Link href="/about" className={styles.primaryButton}>
                 Μαθετε περισσoτερα
               </Link>
               <Link href="/blog/blogIndex" className={styles.secondaryButton}>
@@ -93,15 +100,42 @@ export default function Home() {
         <div className={styles.booksSection}>
           <h3>Οι εκδόσεις του ΚΕ.ΜΕ.ΛΑΚ</h3>
           <div className={styles.booksGrid}>
-            <BookCard image="/EKTHESH.jpg" />
-            <BookCard image="/KAMINIA.jpg" />
-            <BookCard image="/LADI.jpg" />
-            <BookCard image="/LINARI.jpg" />
-            <BookCard image="/MEMERIZI.jpg" />
-            <BookCard image="/OMADA.jpg" />
-            <BookCard image="/SITARI.jpg" />
-            <BookCard image="/STAFIDA.jpg" />
-            <BookCard image="/TOYS.jpg" />
+            <BookCard
+              image="/EKTHESH.jpg"
+              alt="Έκθεση φωτογραφείας λαογραφικού μουσείου Καλλιθέας- ΚΕ.ΜΕ.ΛΑΚ"
+            />
+            <BookCard
+              image="/KAMINIA.jpg"
+              alt="Βιβλίο για την παραγωγή κάρβουνου, από τις εκδόσεις του λαογραφικού μουσείου Καλλιθέας- ΚΕ.ΜΕ.ΛΑΚ"
+            />
+            <BookCard
+              image="/LADI.jpg"
+              alt="Βιβλίο για την παραγωγή λαδίου, από τις εκδόσεις του λαογραφικού μουσείου Καλλιθέας- ΚΕ.ΜΕ.ΛΑΚ"
+            />
+            <BookCard
+              image="/LINARI.jpg"
+              alt="Βιβλίο για την παραγωγή λινάριου, από τις εκδόσεις του λαογραφικού μουσείου Καλλιθέας- ΚΕ.ΜΕ.ΛΑΚ"
+            />
+            <BookCard
+              image="/MEMERIZI.jpg"
+              alt="Το Μεμερίζι ή αλλιώς το Κάτω χωριό, από τις εκδόσεις του λαογραφικού μουσείου Καλλιθέας- ΚΕ.ΜΕ.ΛΑΚ"
+            />
+            <BookCard
+              image="/OMADA.jpg"
+              alt="Ποδοσφαιρική ομάδα Α.Ο. Καλλιθέας, απο τις εκδόσεις του λαογραφικού μουσείου Καλλιθέας- ΚΕ.ΜΕ.ΛΑΚ"
+            />
+            <BookCard
+              image="/SITARI.jpg"
+              alt="Βιβλίο για την παραγωγή σιτάριου, από τις εκδόσεις του λαογραφικού μουσείου Καλλιθέας- ΚΕ.ΜΕ.ΛΑΚ"
+            />
+            <BookCard
+              image="/STAFIDA.jpg"
+              alt="Βιβλίο για την παραγωγή σταφίδας, από τις εκδόσεις του λαογραφικού μουσείου Καλλιθέας- ΚΕ.ΜΕ.ΛΑΚ"
+            />
+            <BookCard
+              image="/TOYS.jpg"
+              alt="Βιβλίο για τα παιχνίδια μιας άλλης εποχής, από τις εκδόσεις του λαογραφικού μουσείου Καλλιθέας- ΚΕ.ΜΕ.ΛΑΚ"
+            />
           </div>
         </div>
 
