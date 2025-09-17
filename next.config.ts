@@ -18,7 +18,7 @@ const nextConfig: NextConfig = {
         has: [
           {
             type: "host",
-            value: "your-project.vercel.app", // αλλάξε το με το πραγματικό vercel domain σου
+            value: "ke-me-lak-website.vercel.app", // αλλάξε το με το πραγματικό vercel domain σου
           },
         ],
         destination: "https://kemelak.gr/:path*",
