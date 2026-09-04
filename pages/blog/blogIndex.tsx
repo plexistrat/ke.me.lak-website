@@ -35,7 +35,7 @@ export default function BlogIndex() {
         <section className={styles.heroSection}>
           <div className={styles.heroBackground}>
             <Image
-              src="/heroPhoto.jpg"
+              src="/heroPhoto.webp"
               alt="Παραδοσιακές ιστορίες και αφηγήσεις"
               fill
               style={{ objectFit: "cover" }}

@@ -15,7 +15,7 @@ function About() {
         <section className={styles.heroSection}>
           <div className={styles.heroBackground}>
             <Image
-              src="/heroPhoto.jpg"
+              src="/heroPhoto.webp"
               alt="Παραδοσιακό κτίριο του ΚΕ.ΜΕ.ΛΑΚ"
               fill
               style={{ objectFit: "cover" }}

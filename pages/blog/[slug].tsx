@@ -29,7 +29,7 @@ export default function ArticlePage({ article }: { article: Article | null }) {
           <section className={styles.heroSection}>
             <div className={styles.heroBackground}>
               <Image
-                src="/heroPhoto.jpg"
+                src="/heroPhoto.webp"
                 alt="Άρθρο δεν βρέθηκε"
                 fill
                 style={{ objectFit: "cover" }}
@@ -69,7 +69,7 @@ export default function ArticlePage({ article }: { article: Article | null }) {
       <SEO
         title={`${article.title} | Ιστορίες από την Καλλιθέα`}
         description={article.excerpt || article.content.substring(0, 160)}
-        image={article.image || "/heroPhoto.jpg"}
+        image={article.image || "/heroPhoto.webp"}
         url={`https://kemelak.gr/blog/${article.slug}`}
       />
 
@@ -81,7 +81,7 @@ export default function ArticlePage({ article }: { article: Article | null }) {
           <section className={styles.heroSection}>
             <div className={styles.heroBackground}>
               <Image
-                src={article.image || "/heroPhoto.jpg"}
+                src={article.image || "/heroPhoto.webp"}
                 alt={article.title}
                 fill
                 style={{ objectFit: "cover" }}

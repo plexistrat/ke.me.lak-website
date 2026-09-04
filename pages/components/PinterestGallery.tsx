@@ -11,15 +11,15 @@ interface GalleryImage {
 }
 
 interface PinterestGalleryProps {
-  images: GalleryImage[];
+  images?: GalleryImage[];
   title?: string;
   columns?: number;
   gap?: number;
 }
 
-const galleryImages = Array.from({ length: 15 }, (_, index) => ({
+const galleryImages = Array.from({ length: 34 }, (_, index) => ({
   id: `${index + 1}`,
-  src: `/${index + 1}.jpg`,
+  src: `/${index + 1}.webp`,
   alt: `Gallery photo ${index + 1}`,
 }));
 
@@ -212,7 +212,7 @@ const PinterestGallery: React.FC<PinterestGalleryProps> = ({
                 onClick={() =>
                   downloadImage(
                     selectedImage.src,
-                    `image-${selectedImage.id}.jpg`
+                    `image-${selectedImage.id}.webp`
                   )
                 }
                 title="Download image"

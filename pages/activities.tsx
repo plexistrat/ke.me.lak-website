@@ -41,7 +41,7 @@ function Activities() {
           <section className={styles.heroSection}>
             <div className={styles.heroBackground}>
               <Image
-                src="/heroPhoto.jpg"
+                src="/heroPhoto.webp"
                 alt="Δραστηριότητες και εκδηλώσεις"
                 fill
                 style={{ objectFit: "cover" }}
