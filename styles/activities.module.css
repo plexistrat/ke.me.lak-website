@@ -231,6 +231,13 @@
   overflow: visible;
 }
 
+.linksList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+}
+
 .link {
   display: inline-flex;
   align-items: center;
@@ -243,7 +250,6 @@
   background: rgba(0, 112, 243, 0.08);
   border-radius: 12px;
   transition: all 0.3s ease;
-  margin-top: auto;
 }
 
 .link:hover {

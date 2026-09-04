@@ -7,16 +7,6 @@ import actions from "../data/actions.json";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-// interface Action {
-//   id: number;
-//   title: string;
-//   date: string;
-//   content: string;
-//   image?: string;
-//   url?: string;
-//   category?: string;
-// }
-
 function Activities() {
   return (
     <>
@@ -106,16 +96,24 @@ function Activities() {
 
                       <p className={styles.excerpt}>{action.content}</p>
 
-                      {action.url && (
-                        <a
-                          href={action.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={styles.link}
-                        >
-                          <span>Περισσότερες πληροφορίες</span>
-                          <span className={styles.linkIcon}>→</span>
-                        </a>
+                      {action.links && action.links.length > 0 && (
+                        <div className={styles.linksList}>
+                          {action.links.map((link, index) => (
+                            <a
+                              key={link}
+                              href={link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={styles.link}
+                            >
+                              <span>
+                                Περισσότερες πληροφορίες
+                                {action.links!.length > 1 ? ` ${index + 1}` : ""}
+                              </span>
+                              <span className={styles.linkIcon}>→</span>
+                            </a>
+                          ))}
+                        </div>
                       )}
                     </div>
                   </article>
