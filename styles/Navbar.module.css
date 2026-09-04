@@ -64,12 +64,12 @@
 }
 
 .listItem:focus {
-  outline: 2px solid #0070f3;
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
 /* .listItem.active {
-  color: #0070f3;
+  color: var(--color-primary);
   background-color: rgba(0, 112, 243, 0.15);
   font-weight: 600;
 } */
@@ -82,7 +82,7 @@
   transform: translateX(-50%);
   width: 60%;
   height: 2px;
-  background-color: #0070f3;
+  background-color: var(--color-primary);
   border-radius: 1px;
 }
 
@@ -189,15 +189,15 @@
 
 .mobileListItem:hover {
   background-color: rgba(0, 112, 243, 0.1);
-  color: #0070f3;
+  color: var(--color-primary);
   transform: translateX(5px);
 }
 
 .mobileListItem.active {
   background-color: rgba(0, 112, 243, 0.15);
-  color: #0070f3;
+  color: var(--color-primary);
   font-weight: 600;
-  border-left: 4px solid #0070f3;
+  border-left: 4px solid var(--color-primary);
 }
 
 /* Mobile Overlay */

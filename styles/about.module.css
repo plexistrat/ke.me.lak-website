@@ -2,7 +2,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #f8f9fa;
+  background-color: var(--color-bg-soft);
 }
 
 .main {
@@ -48,7 +48,7 @@
 }
 
 .title {
-  font-family: "Georgia", "Times New Roman", serif;
+  font-family: var(--font-heading);
   font-size: clamp(36px, 6vw, 56px);
   font-weight: 700;
   margin-bottom: 20px;
@@ -67,7 +67,7 @@
 /* Content Section */
 .contentSection {
   padding: 80px 0;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: linear-gradient(135deg, var(--color-bg-soft) 0%, #e9ecef 100%);
 }
 
 .contentWrapper {
@@ -94,7 +94,7 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   margin-bottom: 40px;
   transition: all 0.3s ease;
-  border-left: 5px solid #0070f3;
+  border-left: 5px solid var(--color-primary);
 }
 
 .contentCard:hover {
@@ -116,17 +116,17 @@
 }
 
 .cardTitle {
-  font-family: "Georgia", "Times New Roman", serif;
+  font-family: var(--font-heading);
   font-size: 28px;
   font-weight: 600;
-  color: #2c3e50;
+  color: var(--color-text);
   margin-bottom: 25px;
   line-height: 1.3;
 }
 
 .introCard .cardTitle {
   font-size: 32px;
-  color: #0070f3;
+  color: var(--color-primary);
   margin-bottom: 30px;
 }
 
@@ -138,7 +138,7 @@
 }
 
 .paragraph {
-  font-family: "Arial", "Helvetica", sans-serif;
+  font-family: var(--font-body);
   font-size: 18px;
   line-height: 1.8;
   color: #4a5568;
@@ -155,7 +155,7 @@
 
 /* Vision Card */
 .visionCard {
-  background: linear-gradient(135deg, #0070f3 0%, #0056b3 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: white;
   padding: 50px;
   border-radius: 20px;
@@ -190,7 +190,7 @@
 }
 
 .visionText {
-  font-family: "Georgia", "Times New Roman", serif;
+  font-family: var(--font-heading);
   font-size: 24px;
   font-weight: 400;
   line-height: 1.6;
@@ -210,11 +210,22 @@
 }
 
 .ctaTitle {
-  font-family: "Georgia", "Times New Roman", serif;
+  font-family: var(--font-heading);
   font-size: 28px;
   font-weight: 600;
-  color: #2c3e50;
+  color: var(--color-text);
   margin-bottom: 35px;
+  position: relative;
+}
+
+.ctaTitle::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+  margin: 20px auto 0;
+  border-radius: 2px;
 }
 
 .buttonGroup {
@@ -240,7 +251,7 @@
 }
 
 .primaryButton {
-  background: linear-gradient(135deg, #0070f3 0%, #0056b3 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: white;
   border: 2px solid transparent;
 }
@@ -248,7 +259,7 @@
 .primaryButton:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(0, 112, 243, 0.4);
-  background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, #004085 100%);
 }
 
 .secondaryButton {
@@ -265,12 +276,12 @@
 
 .backButton {
   background: transparent;
-  color: #6c757d;
-  border: 2px solid #6c757d;
+  color: var(--color-text-muted);
+  border: 2px solid var(--color-text-muted);
 }
 
 .backButton:hover {
-  background: #6c757d;
+  background: var(--color-text-muted);
   color: white;
   transform: translateY(-3px);
 }

@@ -49,7 +49,7 @@
 }
 
 .title {
-  font-family: "Georgia", "Times New Roman", serif;
+  font-family: var(--font-heading);
   font-size: 42px; /* fixed */
   font-weight: 700;
   margin-bottom: 20px;
@@ -103,13 +103,13 @@
 .statNumber {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #0070f3;
-  font-family: "Georgia", "Times New Roman", serif;
+  color: var(--color-accent);
+  font-family: var(--font-heading);
 }
 
 .statLabel {
   font-size: 14px;
-  color: #6c757d;
+  color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: 500;
@@ -152,7 +152,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(135deg, #0070f3, #00a8ff);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   z-index: 2;
 }
 
@@ -204,7 +204,7 @@
 .category {
   display: inline-block;
   padding: 6px 16px;
-  background: linear-gradient(135deg, #0070f3, #00a8ff);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
   color: white;
   font-size: 12px;
   font-weight: 600;
@@ -216,10 +216,10 @@
 }
 
 .cardTitle {
-  font-family: "Georgia", "Times New Roman", serif;
+  font-family: var(--font-heading);
   font-size: 22px;
   font-weight: 600;
-  color: #2c3e50;
+  color: var(--color-text);
   margin-bottom: 16px;
   line-height: 1.4;
   overflow: hidden;
@@ -234,7 +234,7 @@
 
 .date {
   font-size: 14px;
-  color: #6c757d;
+  color: var(--color-text-muted);
   font-weight: 500;
 }
 
@@ -266,7 +266,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  color: #0070f3;
+  color: var(--color-primary);
   text-decoration: none;
   font-weight: 600;
   font-size: 15px;
@@ -278,7 +278,7 @@
 
 .link:hover {
   background: rgba(0, 112, 243, 0.12);
-  color: #0056b3;
+  color: var(--color-primary-dark);
   transform: translateY(-1px);
 }
 
@@ -306,13 +306,13 @@
 
 .emptyState h3 {
   font-size: 24px;
-  color: #2c3e50;
+  color: var(--color-text);
   margin-bottom: 10px;
-  font-family: "Georgia", "Times New Roman", serif;
+  font-family: var(--font-heading);
 }
 
 .emptyState p {
-  color: #6c757d;
+  color: var(--color-text-muted);
   font-size: 16px;
   line-height: 1.5;
 }
@@ -340,7 +340,7 @@
 }
 
 .homeButton {
-  background: linear-gradient(135deg, #0070f3, #0056b3);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   color: white;
   box-shadow: 0 4px 15px rgba(0, 112, 243, 0.3);
 }
@@ -352,12 +352,12 @@
 
 .storiesButton {
   background: transparent;
-  color: #6c757d;
-  border: 2px solid #6c757d;
+  color: var(--color-text-muted);
+  border: 2px solid var(--color-text-muted);
 }
 
 .storiesButton:hover {
-  background: #6c757d;
+  background: var(--color-text-muted);
   color: white;
   transform: translateY(-2px);
 }
@@ -374,46 +374,5 @@
 
   .card:hover {
     transform: none;
-  }
-}
-
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .container {
-    background: #ffffff;
-  }
-
-  .contentSection {
-    background: #ffffff;
-  }
-
-  .statsSection {
-    background: #d0d3d9;
-    border-color: #4a5568;
-  }
-
-  .card {
-    background: #2d3748;
-    border-color: #4a5568;
-  }
-
-  .cardTitle {
-    color: #f7fafc;
-  }
-
-  .excerpt {
-    color: #cbd5e1;
-  }
-
-  .date {
-    color: #a0aec0;
-  }
-
-  .emptyState h3 {
-    color: #f7fafc;
-  }
-
-  .emptyState p {
-    color: #a0aec0;
   }
 }

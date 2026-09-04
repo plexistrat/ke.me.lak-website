@@ -3,7 +3,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: linear-gradient(135deg, var(--color-bg-soft) 0%, #e9ecef 100%);
 }
 
 .main {
@@ -48,7 +48,7 @@
 }
 
 .title {
-  font-family: "Georgia", "Times New Roman", serif;
+  font-family: var(--font-heading);
   font-size: clamp(36px, 6vw, 56px);
   font-weight: 700;
   margin-bottom: 20px;
@@ -97,12 +97,12 @@
   border-radius: 50px;
   font-size: 16px;
   transition: all 0.3s ease;
-  background: #f8f9fa;
+  background: var(--color-bg-soft);
 }
 
 .searchInput:focus {
   outline: none;
-  border-color: #0070f3;
+  border-color: var(--color-primary);
   background: white;
   box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.1);
 }
@@ -112,7 +112,7 @@
   right: 16px;
   top: 50%;
   transform: translateY(-50%);
-  color: #6c757d;
+  color: var(--color-text-muted);
   font-size: 18px;
 }
 
@@ -127,7 +127,7 @@
   border: 2px solid #e9ecef;
   border-radius: 25px;
   background: white;
-  color: #6c757d;
+  color: var(--color-text-muted);
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
@@ -135,13 +135,13 @@
 }
 
 .categoryButton:hover {
-  border-color: #0070f3;
-  color: #0070f3;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 .categoryButton.active {
-  background: #0070f3;
-  border-color: #0070f3;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
   color: white;
 }
 
@@ -197,7 +197,7 @@
 .category {
   display: inline-block;
   padding: 4px 12px;
-  background: linear-gradient(135deg, #0070f3, #00a8ff);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
   color: white;
   font-size: 12px;
   font-weight: 600;
@@ -208,10 +208,10 @@
 }
 
 .cardTitle {
-  font-family: "Georgia", "Times New Roman", serif;
+  font-family: var(--font-heading);
   font-size: 20px;
   font-weight: 600;
-  color: #2c3e50;
+  color: var(--color-text);
   margin-bottom: 15px;
   line-height: 1.4;
   display: -webkit-box;
@@ -223,7 +223,7 @@
 
 .excerpt {
   font-size: 14px;
-  color: #6c757d;
+  color: var(--color-text-muted);
   line-height: 1.6;
   margin-bottom: 15px;
   display: -webkit-box;
@@ -241,7 +241,7 @@
 }
 
 .readMore {
-  color: #0070f3;
+  color: var(--color-primary);
   font-weight: 600;
   font-size: 14px;
   text-transform: uppercase;
@@ -249,7 +249,7 @@
 }
 
 .articleCard:hover .readMore {
-  color: #0056b3;
+  color: var(--color-primary-dark);
 }
 
 /* No Results */
@@ -266,12 +266,12 @@
 
 .noResults h3 {
   font-size: 24px;
-  color: #2c3e50;
+  color: var(--color-text);
   margin-bottom: 10px;
 }
 
 .noResults p {
-  color: #6c757d;
+  color: var(--color-text-muted);
   font-size: 16px;
 }
 
@@ -279,14 +279,14 @@
 .stats {
   text-align: center;
   padding: 20px;
-  background: #f8f9fa;
+  background: var(--color-bg-soft);
   border-radius: 10px;
   margin-bottom: 30px;
 }
 
 .stats p {
   margin: 0;
-  color: #6c757d;
+  color: var(--color-text-muted);
   font-size: 14px;
 }
 
@@ -299,16 +299,16 @@
   display: inline-block;
   padding: 12px 24px;
   background: transparent;
-  color: #6c757d;
+  color: var(--color-text-muted);
   text-decoration: none;
-  border: 2px solid #6c757d;
+  border: 2px solid var(--color-text-muted);
   border-radius: 25px;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 
 .backButton:hover {
-  background: #6c757d;
+  background: var(--color-text-muted);
   color: white;
   transform: translateY(-2px);
 }
@@ -373,21 +373,21 @@
 }
 
 .excerpt {
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  background: linear-gradient(135deg, var(--color-bg-soft), #e9ecef);
   padding: 30px;
-  border-left: 5px solid #0070f3;
+  border-left: 5px solid var(--color-primary);
   border-radius: 0 10px 10px 0;
   margin-bottom: 40px;
   font-size: 18px;
   font-style: italic;
-  color: #2c3e50;
+  color: var(--color-text);
 }
 
 .articleContent {
   font-size: 18px;
   line-height: 1.8;
-  color: #2c3e50;
-  font-family: "Georgia", "Times New Roman", serif;
+  color: var(--color-text);
+  font-family: var(--font-heading);
 }
 
 .articleContent p {
@@ -415,9 +415,9 @@
 .shareButton,
 .printButton {
   padding: 10px 20px;
-  border: 2px solid #0070f3;
+  border: 2px solid var(--color-primary);
   background: transparent;
-  color: #0070f3;
+  color: var(--color-primary);
   border-radius: 25px;
   cursor: pointer;
   font-size: 14px;
@@ -427,14 +427,14 @@
 
 .shareButton:hover,
 .printButton:hover {
-  background: #0070f3;
+  background: var(--color-primary);
   color: white;
 }
 
 /* Related Articles */
 .relatedSection {
   padding: 60px 20px;
-  background: #f8f9fa;
+  background: var(--color-bg-soft);
 }
 
 .relatedWrapper {
@@ -443,12 +443,12 @@
 }
 
 .relatedTitle {
-  font-family: "Georgia", "Times New Roman", serif;
+  font-family: var(--font-heading);
   font-size: 32px;
   font-weight: 600;
   text-align: center;
   margin-bottom: 40px;
-  color: #2c3e50;
+  color: var(--color-text);
 }
 
 .relatedGrid {
@@ -489,14 +489,14 @@
 .relatedContent h3 {
   font-size: 16px;
   font-weight: 600;
-  color: #2c3e50;
+  color: var(--color-text);
   margin-bottom: 10px;
   line-height: 1.4;
 }
 
 .relatedContent p {
   font-size: 14px;
-  color: #6c757d;
+  color: var(--color-text-muted);
   line-height: 1.5;
   margin: 0;
   display: -webkit-box;
@@ -518,7 +518,7 @@
 
 .homeButton {
   padding: 12px 24px;
-  background: linear-gradient(135deg, #0070f3, #0056b3);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   color: white;
   text-decoration: none;
   border-radius: 25px;
@@ -553,7 +553,7 @@
 
 .errorContent p {
   font-size: 18px;
-  color: #6c757d;
+  color: var(--color-text-muted);
   margin-bottom: 30px;
 }
 
@@ -563,7 +563,7 @@
   align-items: center;
   min-height: 50vh;
   font-size: 18px;
-  color: #6c757d;
+  color: var(--color-text-muted);
 }
 
 /* Responsive Design */

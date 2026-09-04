@@ -75,7 +75,7 @@
 }
 
 .socialLink:hover svg {
-  fill: #0070f3;
+  fill: var(--color-primary);
 }
 
 .socialLink:nth-child(2):hover svg {
