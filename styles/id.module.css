@@ -209,7 +209,7 @@
   line-height: 0.8;
   margin: 0.1em 0.1em 0 0;
   color: var(--color-primary);
-  text-shadow: 2px 2px 4px rgba(0, 112, 243, 0.3);
+  text-shadow: 2px 2px 4px rgba(181, 101, 29, 0.3);
 }
 
 .content p {
@@ -302,7 +302,7 @@
 
 .homeButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 112, 243, 0.4);
+  box-shadow: 0 4px 15px rgba(181, 101, 29, 0.4);
 }
 
 /* Related Articles Section */

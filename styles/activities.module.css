@@ -154,6 +154,12 @@
   height: 4px;
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .card:hover {
@@ -271,13 +277,13 @@
   font-weight: 600;
   font-size: 15px;
   padding: 12px 20px;
-  background: rgba(0, 112, 243, 0.08);
+  background: rgba(181, 101, 29, 0.08);
   border-radius: 12px;
   transition: all 0.3s ease;
 }
 
 .link:hover {
-  background: rgba(0, 112, 243, 0.12);
+  background: rgba(181, 101, 29, 0.12);
   color: var(--color-primary-dark);
   transform: translateY(-1px);
 }
@@ -342,12 +348,12 @@
 .homeButton {
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   color: white;
-  box-shadow: 0 4px 15px rgba(0, 112, 243, 0.3);
+  box-shadow: 0 4px 15px rgba(181, 101, 29, 0.3);
 }
 
 .homeButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 112, 243, 0.4);
+  box-shadow: 0 6px 20px rgba(181, 101, 29, 0.4);
 }
 
 .storiesButton {

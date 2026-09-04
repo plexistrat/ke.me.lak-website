@@ -84,7 +84,7 @@
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   margin-bottom: 60px;
   text-align: center;
-  border: 1px solid rgba(0, 112, 243, 0.1);
+  border: 1px solid rgba(181, 101, 29, 0.1);
 }
 
 .contentCard {
@@ -161,7 +161,7 @@
   border-radius: 20px;
   text-align: center;
   margin-bottom: 60px;
-  box-shadow: 0 15px 35px rgba(0, 112, 243, 0.3);
+  box-shadow: 0 15px 35px rgba(181, 101, 29, 0.3);
   position: relative;
   overflow: hidden;
 }
@@ -258,8 +258,8 @@
 
 .primaryButton:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 112, 243, 0.4);
-  background: linear-gradient(135deg, var(--color-primary-dark) 0%, #004085 100%);
+  box-shadow: 0 8px 25px rgba(181, 101, 29, 0.4);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, #6b3610 100%);
 }
 
 .secondaryButton {

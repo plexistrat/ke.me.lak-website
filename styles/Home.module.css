@@ -124,8 +124,8 @@
 
 .primaryButton:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 112, 243, 0.4);
-  background: linear-gradient(135deg, var(--color-primary-dark) 0%, #004085 100%);
+  box-shadow: 0 8px 25px rgba(181, 101, 29, 0.4);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, #6b3610 100%);
 }
 
 .secondaryButton {
@@ -197,13 +197,13 @@
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  border: 1px solid rgba(0, 112, 243, 0.1);
+  border: 1px solid rgba(181, 101, 29, 0.1);
 }
 
 .card:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  border-color: rgba(0, 112, 243, 0.3);
+  border-color: rgba(181, 101, 29, 0.3);
 }
 
 .card h3 {
