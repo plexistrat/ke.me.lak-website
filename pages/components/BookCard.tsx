@@ -78,7 +78,6 @@ function BookCard({
                 loading="lazy"
               />
               <div className={styles.imageOverlay}>
-                {/* <span className={styles.viewIcon}>👁️</span> */}
                 <span className={styles.viewText}>Προβολή</span>
               </div>
             </button>
@@ -150,13 +149,6 @@ function BookCard({
                   )}
                 </div>
               )}
-            </div>
-
-            <div className={styles.modalFooter}>
-              <button className={styles.actionButton} onClick={handleClick}>
-                <span className={styles.buttonIcon}>📖</span>
-                Κλείσιμο προβολής
-              </button>
             </div>
           </div>
         </div>
