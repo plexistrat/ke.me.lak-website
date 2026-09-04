@@ -145,23 +145,6 @@
   }
 }
 
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
-  z-index: 2;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.card:hover::before {
-  opacity: 1;
-}
-
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.16);
