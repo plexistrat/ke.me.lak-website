@@ -72,7 +72,7 @@
 /* Content Section */
 .contentSection {
   padding: 80px 0;
-  background: #ffffff;
+  background: #f2f4f8;
 }
 
 .contentWrapper {
@@ -125,11 +125,12 @@
 
 /* Cards */
 .card {
+  position: relative;
   background: #ffffff;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
-  border: 1px solid #f0f0f0;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e5eb;
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -140,10 +141,21 @@
   }
 }
 
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #0070f3, #00a8ff);
+  z-index: 2;
+}
+
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-  border-color: #e0e0e0;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.16);
+  border-color: #c9cfd9;
 }
 
 .imageWrapper {
@@ -227,8 +239,10 @@
   line-height: 1.6;
   margin-bottom: 20px;
   flex: 1;
-  display: block;
-  overflow: visible;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .linksList {
