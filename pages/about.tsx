@@ -77,7 +77,6 @@ function About() {
             </div>
 
             <div className={styles.visionCard}>
-              <div className={styles.visionIcon}>✨</div>
               <p className={styles.visionText}>
                 Το ΚΕ.ΜΕ.ΛΑΚ δεν είναι απλώς ένας χώρος έκθεσης – είναι μια
                 συνάντηση γενεών, μια αφορμή για γνώση, μνήμη και έμπνευση.
