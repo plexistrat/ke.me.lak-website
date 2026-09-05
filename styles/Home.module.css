@@ -207,14 +207,22 @@
 }
 
 .card h3 {
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 600;
   color: #333;
   margin-bottom: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
+}
+
+.cardIcon {
+  width: 30px;
+  height: 30px;
+  stroke-width: 1.75;
+  color: var(--color-primary);
+  flex-shrink: 0;
 }
 
 .card p {

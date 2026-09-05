@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import BookCard from "./components/BookCard";
 import PinterestGallery from "./components/PinterestGallery";
 import SEO from "./components/SEO";
+import { Landmark, Drama, BookOpen } from "lucide-react";
 
 export default function Home() {
   return (
@@ -75,18 +76,27 @@ export default function Home() {
 
             <div className={styles.highlightCards}>
               <div className={styles.card}>
-                <h3>🏛️ Ιστορία</h3>
+                <h3>
+                  <Landmark className={styles.cardIcon} />
+                  Ιστορία
+                </h3>
                 <p>
                   Ανακαλύπτουμε και καταγράφουμε την πλούσια ιστορία της
                   Καλλιθέας
                 </p>
               </div>
               <div className={styles.card}>
-                <h3>🎭 Παράδοση</h3>
+                <h3>
+                  <Drama className={styles.cardIcon} />
+                  Παράδοση
+                </h3>
                 <p>Διατηρούμε ζωντανές τις παραδοσιακές τέχνες και εθίμα</p>
               </div>
               <div className={styles.card}>
-                <h3>📚 Μελέτη</h3>
+                <h3>
+                  <BookOpen className={styles.cardIcon} />
+                  Μελέτη
+                </h3>
                 <p>Ερευνούμε και μελετάμε τη λαογραφική κληρονομιά</p>
               </div>
             </div>
