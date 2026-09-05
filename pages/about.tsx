@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { Landmark, Handshake } from "lucide-react";
 
 function About() {
   return (
@@ -50,7 +51,7 @@ function About() {
 
             <div className={styles.mainContent}>
               <div className={styles.contentCard}>
-                <div className={styles.cardIcon}>🏛️</div>
+                <Landmark className={styles.cardIcon} />
                 <h3 className={styles.cardTitle}>Οι Συλλογές μας</h3>
                 <p className={styles.paragraph}>
                   Στο ΚΕ.ΜΕ.ΛΑΚ φιλοξενούνται αντικείμενα καθημερινής ζωής,
@@ -64,7 +65,7 @@ function About() {
               </div>
 
               <div className={styles.contentCard}>
-                <div className={styles.cardIcon}>🤝</div>
+                <Handshake className={styles.cardIcon} />
                 <h3 className={styles.cardTitle}>Η Κοινότητά μας</h3>
                 <p className={styles.paragraph}>
                   Η λειτουργία του μουσείου βασίζεται σε μεγάλο βαθμό στη

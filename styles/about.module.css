@@ -110,7 +110,10 @@
 }
 
 .cardIcon {
-  font-size: 48px;
+  width: 44px;
+  height: 44px;
+  stroke-width: 1.5;
+  color: var(--color-primary);
   margin-bottom: 20px;
   display: block;
 }
@@ -379,7 +382,8 @@
   }
 
   .cardIcon {
-    font-size: 36px;
+    width: 36px;
+    height: 36px;
   }
 }
 @media (max-width: 425px) {
